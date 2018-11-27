@@ -1,5 +1,7 @@
 package com.zmy.basic;
 
+import java.nio.file.NotDirectoryException;
+
 public class LinkedListAlgo {
 
 
@@ -12,7 +14,7 @@ public class LinkedListAlgo {
         Node current = node;
         while (current != null) {
             Node nextNode = current.next;
-            if (nextNode == null){
+            if (nextNode == null) {
                 head = current;
             }
             current.next = previous; //实现反转
@@ -21,6 +23,22 @@ public class LinkedListAlgo {
         }
 
         return head;
+    }
+
+    /**
+     * 检查环
+     */
+    public static boolean checkCircle(Node node) {
+        if (node == null) return false;
+        Node fast = node.next;
+        Node slow = node;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow) return true;
+        }
+        return false;
     }
 
 
