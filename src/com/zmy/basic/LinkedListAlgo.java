@@ -1,9 +1,6 @@
 package com.zmy.basic;
 
-import java.nio.file.NotDirectoryException;
-
 public class LinkedListAlgo {
-
 
     /**
      * 单链表反转
@@ -41,6 +38,38 @@ public class LinkedListAlgo {
         return false;
     }
 
+
+    public static Node mergeSortList(Node la, Node lb) {
+        if (la == null) return lb;
+        if (lb == null) return la;
+        Node p = la;
+        Node q = lb;
+        Node head;
+        if (p.data < q.data) {
+            head = p;
+            p = p.next;
+        } else {
+            head = q;
+            q = q.next;
+        }
+        Node r = head;
+        while (p != null && q != null) {
+            if (p.data < q.data) {
+                r.next = p;
+                p = p.next;
+            } else {
+                r.next = q;
+                q = q.next;
+            }
+            r = r.next;
+        }
+        if (q != null) {
+            r.next = q;
+        } else {
+            r.next = p;
+        }
+        return head;
+    }
 
     public static Node createNode(int value) {
         return new Node(value, null);
