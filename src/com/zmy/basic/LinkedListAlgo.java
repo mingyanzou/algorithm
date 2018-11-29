@@ -38,7 +38,12 @@ public class LinkedListAlgo {
         return false;
     }
 
-
+    /**
+     * 有序合并连个单链表
+     * @param la
+     * @param lb
+     * @return
+     */
     public static Node mergeSortList(Node la, Node lb) {
         if (la == null) return lb;
         if (lb == null) return la;

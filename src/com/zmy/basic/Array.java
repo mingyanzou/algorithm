@@ -1,5 +1,8 @@
 package com.zmy.basic;
 
+/**
+ * int 类型实现数组
+ */
 public class Array {
     public int data[];
     public int count;

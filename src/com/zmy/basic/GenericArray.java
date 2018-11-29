@@ -9,8 +9,7 @@ public class GenericArray<T> {
         size = 0;
     }
 
-    //无惨构造方法
-
+    //无参构造方法
     public GenericArray() {
         this(10);
     }
