@@ -118,6 +118,14 @@ public class SingleLinkedList {
         }
 
     }
+    public void printAll() {
+        Node p = head;
+        while (p != null) {
+            System.out.print(p.data + " ");
+            p = p.next;
+        }
+        System.out.println();
+    }
 
     public static class Node {
         private int data;
@@ -131,5 +139,14 @@ public class SingleLinkedList {
         public int getData() {
             return data;
         }
+    }
+
+    public static void main(String args[]){
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+        singleLinkedList.insertTail(1);
+        singleLinkedList.insertTail(2);
+        singleLinkedList.insertTail(3);
+        singleLinkedList.insertTail(4);
+        singleLinkedList.printAll();
     }
 }

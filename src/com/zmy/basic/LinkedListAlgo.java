@@ -40,6 +40,7 @@ public class LinkedListAlgo {
 
     /**
      * 有序合并连个单链表
+     *
      * @param la
      * @param lb
      * @return
@@ -74,6 +75,62 @@ public class LinkedListAlgo {
             r.next = p;
         }
         return head;
+    }
+
+    public static Node selectMiddleNode(Node a) {
+        if (a == null) return null;
+        Node fast = a;
+        Node slow = a;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public static Node deleteLastNthNode(Node list, int n) {
+        Node fast = list;
+        int i = 1;
+        while (fast != null && i < n) {
+            fast = fast.next;
+            ++i;
+        }
+        if (fast == null) return list;
+
+        Node slow = list;
+        Node pre = null;
+        while (fast.next != null) {
+            fast = fast.next;
+            pre = slow;
+            slow = slow.next;
+        }
+
+        if (pre == null) {
+            list = list.next;
+        } else {
+            pre.next = pre.next.next;
+        }
+        return list;
+    }
+
+    public static Node deleteLastNth2(Node list, int n) {
+        Node curNode = list;
+        Node slowNode = list;
+        for (int i = 0; i < n; i++) {
+            curNode = curNode.next;
+        }
+        //删如果是头结点
+        if (curNode == null) {
+            list = list.next;
+            return list;
+        }
+
+        while (curNode.next != null) {
+            curNode = curNode.next;
+            slowNode = slowNode.next;
+        }
+        slowNode.next = slowNode.next.next;
+        return list;
     }
 
     public static Node createNode(int value) {
