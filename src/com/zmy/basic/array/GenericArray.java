@@ -1,4 +1,4 @@
-package com.zmy.basic;
+package com.zmy.basic.array;
 
 public class GenericArray<T> {
     private T[] data;

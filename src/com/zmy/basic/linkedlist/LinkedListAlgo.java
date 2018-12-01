@@ -1,4 +1,4 @@
-package com.zmy.basic;
+package com.zmy.basic.linkedlist;
 
 public class LinkedListAlgo {
 

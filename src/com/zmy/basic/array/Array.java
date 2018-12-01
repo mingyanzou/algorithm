@@ -1,4 +1,4 @@
-package com.zmy.basic;
+package com.zmy.basic.array;
 
 /**
  * int 类型实现数组
