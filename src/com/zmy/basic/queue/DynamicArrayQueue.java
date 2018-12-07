@@ -35,7 +35,7 @@ public class DynamicArrayQueue {
 
     public void printAll() {
         for (int i = head; i < tail; i++) {
-             System.out.print(items[i] + " ");
+            System.out.print(items[i] + " ");
         }
         System.out.println();
     }
