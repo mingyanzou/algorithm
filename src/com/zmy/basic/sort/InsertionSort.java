@@ -1,6 +1,6 @@
 package com.zmy.basic.sort;
 
-public class InsertSort {
+public class InsertionSort {
     public static void main(String args[]) {
         int[] a = {6, 8, 4, 9, 3, 5, 7, 1, 2};
         sort(a);
